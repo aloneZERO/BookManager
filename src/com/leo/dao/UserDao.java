@@ -35,4 +35,19 @@ public class UserDao {
 		}
 		return resultUser;
 	}
+	
+	/**
+	 * 用户注册，添加管理员用户
+	 * @param con
+	 * @param user
+	 * @return
+	 * @throws Exception
+	 */
+	public int register(Connection con, User user)throws Exception {
+		String sql = "insert into t_user values(null,?,?)";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, user.getUserName());
+		pstmt.setString(2, user.getPassword());
+		return pstmt.executeUpdate();
+	}
 }
