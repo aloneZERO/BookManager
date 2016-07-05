@@ -1,0 +1,24 @@
+#关于SpringMVC
+一般的javaMVC架构中最外层是view也就是页面，
+control是一些控制后台和页面访问的类，
+model其实是dao层，
+但大部分人，会再增加一层service层来提供更为方便的应用.
+
+
+#关于DAO模式
+DAO是Data Access Object数据访问接口，数据访问：故名思义就是与数据库打交道。夹在业务逻辑与数据库资源中间。
+
+DAO的功能:
+1. DAO用来封装Data Source的..就比如,Connection conn = DAOFacotry.createConnection()..
+就可以把Driver. URL. username, passpword这一些放在DAO中
+以后要更改数据库的类型.比如要把MSSQL换成Oracle的话..只需要更改DAOFacory里面的getConnection()里面的Driver.URL.之类的..
+2. DAO也是把对数据库的操作(比如最基本的CRUD操作)全部封装在里面..
+比如说你要你要插入一个新的用户..那么.在DAO中我们只需要提供一个insertUser(User user)这一个方法就可以了..具体的操作是在DAO中实现的...
+
+#设置观感
+private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
+try {
+	UIManager.setLookAndFeel(lookAndFeel_win);
+} catch (Exception e) {
+	e.printStackTrace();
+}
