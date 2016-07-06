@@ -31,4 +31,18 @@ public class StringUtil {
 			return false;
 		}
 	}
+	
+	/**
+	 * 判断是否相等
+	 * @param str_dest
+	 * @param str_src
+	 * @return
+	 */
+	public static boolean isEqual(String str_dest,final String str_src) {
+		if(str_dest.trim().equals(str_src.trim())) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 }

@@ -66,4 +66,34 @@ public class BookTypeDao {
 		return pstmt.executeQuery();
 	}
 	
+	/**
+	 * 图书类别删除
+	 * @param con
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public int delete(Connection con,int id)throws Exception {
+		String sql = "delete from t_bookType where id=?";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, id);
+		return pstmt.executeUpdate();
+	}
+	
+	/**
+	 * 图书类别更新
+	 * @param con
+	 * @param bookType
+	 * @return
+	 * @throws Exception
+	 */
+	public int update(Connection con ,BookType bookType)throws Exception {
+		String sql = "update t_bookType set bookTypeName=?,bookTypeDesc=? where id=?";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, bookType.getBookTypeName());
+		pstmt.setString(2, bookType.getBookTypeDesc());
+		pstmt.setInt(3, bookType.getId());
+		return pstmt.executeUpdate();
+	}
+	
 }
