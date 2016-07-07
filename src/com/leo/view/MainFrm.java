@@ -103,6 +103,13 @@ public class MainFrm extends JFrame {
 		menu_3.add(menuItem_2);
 		
 		JMenuItem menuItem_4 = new JMenuItem("图书维护");
+		menuItem_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BookManageInterFrm bookManageInterFrm = new BookManageInterFrm();
+				bookManageInterFrm.setVisible(true);
+				desktop.add(bookManageInterFrm);
+			}
+		});
 		menuItem_4.setIcon(new ImageIcon(MainFrm.class.getResource("/images/edit.png")));
 		menu_3.add(menuItem_4);
 		

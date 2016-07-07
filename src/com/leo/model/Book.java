@@ -10,15 +10,15 @@ public class Book {
 	private String bookName; //图书名称
 	private String author; //作者
 	private String sex; //作者性别
-	private float price; //图书价格
-	private int bookTypeId; //图书类别编号
+	private Float price; //图书价格
+	private Integer bookTypeId; //图书类别编号
 	private String bookTypeName; //图书类别名称
 	private String bookDesc; //图书描述
 	
 	public Book() {
 		super();
 	}
-	public Book(String bookName, String author, String sex, float price, int bookTypeId, String bookDesc) {
+	public Book(String bookName, String author, String sex, Float price, Integer bookTypeId, String bookDesc) {
 		super();
 		this.bookName = bookName;
 		this.author = author;
@@ -52,16 +52,16 @@ public class Book {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public float getPrice() {
+	public Float getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(Float price) {
 		this.price = price;
 	}
-	public int getBookTypeId() {
+	public Integer getBookTypeId() {
 		return bookTypeId;
 	}
-	public void setBookTypeId(int bookTypeId) {
+	public void setBookTypeId(Integer bookTypeId) {
 		this.bookTypeId = bookTypeId;
 	}
 	public String getBookDesc() {
