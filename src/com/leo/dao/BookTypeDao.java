@@ -57,10 +57,10 @@ public class BookTypeDao {
 	 */
 	public ResultSet list(Connection con, BookType bookType)throws Exception {
 		StringBuilder sb = new StringBuilder("select * from t_booktype");
+		//图书类别名称不为空，根据名称查找；名称为空直接返回全部信息
 		if(StringUtil.isNotEmpty(bookType.getBookTypeName())) {
 			sb.append(" and bookTypeName like '%"+bookType.getBookTypeName()+"%'"); //采用模糊查询
 		}
-		
 		//先写and后替换成where是为了适应多条件查询
 		PreparedStatement pstmt = con.prepareStatement(sb.toString().replaceFirst("and","where"));
 		return pstmt.executeQuery();

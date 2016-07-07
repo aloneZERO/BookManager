@@ -15,13 +15,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JDesktopPane;
 import java.awt.event.ActionListener;
-import java.awt.print.Book;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 
 public class MainFrm extends JFrame {
 
-	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel"; //观感
+	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 	private JPanel contentPane;
 	private JDesktopPane desktop = null;
 
@@ -45,7 +44,7 @@ public class MainFrm extends JFrame {
 	 * Create the frame.
 	 */
 	public MainFrm() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MainFrm.class.getResource("/images/leo.jpg")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainFrm.class.getResource("/images/frmicon.png")));
 		setTitle("图书管理系统");
 		try {
 			UIManager.setLookAndFeel(lookAndFeel_win);
@@ -93,6 +92,13 @@ public class MainFrm extends JFrame {
 		menu.add(menu_3);
 		
 		JMenuItem menuItem_2 = new JMenuItem("图书添加");
+		menuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BookAddInterFrm bookAddInterFrm = new BookAddInterFrm();
+				bookAddInterFrm.setVisible(true);
+				desktop.add(bookAddInterFrm);
+			}
+		});
 		menuItem_2.setIcon(new ImageIcon(MainFrm.class.getResource("/images/add.png")));
 		menu_3.add(menuItem_2);
 		
@@ -136,7 +142,7 @@ public class MainFrm extends JFrame {
 		desktop.setBackground(SystemColor.menu);
 		contentPane.add(desktop, BorderLayout.CENTER);
 		
-//		setExtendedState(JFrame.MAXIMIZED_BOTH); //设置JFrame最大化
+		setExtendedState(JFrame.MAXIMIZED_BOTH); //设置JFrame初始状态为最大化
 	}
 
 }

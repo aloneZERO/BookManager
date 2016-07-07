@@ -144,7 +144,7 @@ public class BookTypeAddInterFrm extends JInternalFrame {
 		String bookTypeName = bookTypeNameTxt.getText();
 		String bookTypeDesc = bookTypeDescTxt.getText();
 		if(StringUtil.isEmpty(bookTypeName)) {
-			JOptionPane.showMessageDialog(null, "图书类别名不可为空！","警告",
+			JOptionPane.showMessageDialog(null, "图书类别名称不可为空！","警告",
 					JOptionPane.INFORMATION_MESSAGE);
 			return;
 		}
