@@ -22,3 +22,6 @@ try {
 } catch (Exception e) {
 	e.printStackTrace();
 }
+
+#设置文本区域边框
+bookTypeDescTxt.setBorder(new LineBorder(new java.awt.Color(127,157,185),1,false));
