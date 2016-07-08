@@ -14,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import com.leo.dao.BookDao;
 import com.leo.dao.BookTypeDao;
 import com.leo.model.BookType;
 import com.leo.util.DbUtil;
@@ -40,6 +41,7 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 	private JTable bookTypeTable;
 	private DbUtil dbUtil = new DbUtil();
 	private BookTypeDao bookTypeDao = new BookTypeDao();
+	private BookDao bookDao = new BookDao();
 	private JTextField s_bookTypeNameTxt;
 	private JTextField bookTypeIdTxt;
 	private JTextField bookTypeNameTxt;
@@ -249,6 +251,11 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 			Connection con = null;
 			try {
 				con = dbUtil.getCon();
+				if(bookDao.existBookByBookTypeId(con, bookTypeId)) {
+					JOptionPane.showMessageDialog(null, "当前分类下有图书，无法删除此类别！","提示",
+							JOptionPane.INFORMATION_MESSAGE);
+					return;
+				}
 				int result = bookTypeDao.delete(con, Integer.parseInt(bookTypeId));
 				if(result == 1) {
 					this.resetValue();
