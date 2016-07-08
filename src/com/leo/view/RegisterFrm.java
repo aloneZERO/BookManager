@@ -123,6 +123,7 @@ public class RegisterFrm extends JFrame {
 		label.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		
 		checkpasswordTxt = new JPasswordField();
+		checkpasswordTxt.setToolTipText("请再次输入密码");
 		checkpasswordTxt.setFont(new Font("微软雅黑", Font.PLAIN, 9));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
