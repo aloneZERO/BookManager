@@ -6,7 +6,7 @@ package com.leo.model;
  *
  */
 public class Book {
-	private int id; //编号
+	private Integer id; //编号
 	private String bookName; //图书名称
 	private String author; //作者
 	private String sex; //作者性别
