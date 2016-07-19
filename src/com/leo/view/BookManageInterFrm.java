@@ -32,7 +32,6 @@ import com.leo.util.StringUtil;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JTextArea;
@@ -42,7 +41,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class BookManageInterFrm extends JInternalFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 	private DbUtil dbUtil = new DbUtil();
 	private BookDao bookDao = new BookDao();
@@ -51,8 +51,8 @@ public class BookManageInterFrm extends JInternalFrame {
 	private JTextField s_bookNameTxt;
 	private JTextField s_authorTxt;
 	private JTable bookTable;
-	private JComboBox s_bookTypeJcb;
-	private JComboBox bookTypeJcb;
+	private JComboBox<BookType> s_bookTypeJcb;
+	private JComboBox<BookType> bookTypeJcb;
 	private JTextField bookIdTxt;
 	private JTextField bookNameTxt;
 	private JRadioButton manJrb;
@@ -165,7 +165,7 @@ public class BookManageInterFrm extends JInternalFrame {
 		
 		JLabel label_7 = new JLabel("图书类别：");
 		
-		bookTypeJcb = new JComboBox();
+		bookTypeJcb = new JComboBox<BookType>();
 		
 		JLabel label_8 = new JLabel("图书描述：");
 		
@@ -284,6 +284,7 @@ public class BookManageInterFrm extends JInternalFrame {
 				"\u7F16\u53F7", "\u56FE\u4E66\u540D\u79F0", "\u56FE\u4E66\u4F5C\u8005", "\u4F5C\u8005\u6027\u522B", "\u56FE\u4E66\u4EF7\u683C", "\u56FE\u4E66\u63CF\u8FF0", "\u56FE\u4E66\u7C7B\u522B"
 			}
 		) {
+			private static final long serialVersionUID = 1L;
 			boolean[] columnEditables = new boolean[] {
 				false, false, false, false, false, false, false
 			};
@@ -308,7 +309,7 @@ public class BookManageInterFrm extends JInternalFrame {
 		
 		JLabel label_2 = new JLabel("图书类别：");
 		
-		s_bookTypeJcb = new JComboBox();
+		s_bookTypeJcb = new JComboBox<BookType>();
 		
 		JButton button = new JButton("查询");
 		button.addActionListener(new ActionListener() {

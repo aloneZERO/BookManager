@@ -28,7 +28,8 @@ import java.sql.Connection;
 import java.awt.event.ActionEvent;
 
 public class LoginFrm extends JFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel"; //观感
 	private JPanel contentPane;
 	private JTextField userNameTxt;
@@ -66,9 +67,11 @@ public class LoginFrm extends JFrame {
 		}
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 418, 355);
+		setFocusable(true);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		this.setFocusable(true);
 		
 		JLabel lblNewLabel = new JLabel("图书管理系统");
 		lblNewLabel.setFont(new Font("微软雅黑", Font.BOLD, 23));

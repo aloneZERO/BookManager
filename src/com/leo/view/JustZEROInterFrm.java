@@ -11,6 +11,7 @@ import javax.swing.GroupLayout.Alignment;
 import java.awt.Color;
 
 public class JustZEROInterFrm extends JInternalFrame {
+	private static final long serialVersionUID = 1L;
 	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 

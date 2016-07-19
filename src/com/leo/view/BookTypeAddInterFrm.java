@@ -10,8 +10,6 @@ import com.leo.dao.BookTypeDao;
 import com.leo.model.BookType;
 import com.leo.util.DbUtil;
 import com.leo.util.StringUtil;
-import com.mysql.cj.x.json.DbDoc;
-
 import javax.swing.ImageIcon;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -27,7 +25,8 @@ import java.sql.Connection;
 import java.awt.event.ActionEvent;
 
 public class BookTypeAddInterFrm extends JInternalFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 	private JTextField bookTypeNameTxt;
 	private JTextArea bookTypeDescTxt;

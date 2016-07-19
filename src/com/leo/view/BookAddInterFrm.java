@@ -1,7 +1,6 @@
 package com.leo.view;
 
 import java.awt.EventQueue;
-import java.awt.Stroke;
 import java.awt.event.ActionEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -34,7 +33,8 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
 public class BookAddInterFrm extends JInternalFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 	private JTextField bookNameTxt;
 	private JTextField authorTxt;
@@ -43,7 +43,7 @@ public class BookAddInterFrm extends JInternalFrame {
 	private JRadioButton unknownJrb;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField priceTxt;
-	private JComboBox bookTypeJcb;
+	private JComboBox<BookType> bookTypeJcb;
 	private JTextArea bookDescTxt;
 	
 	private DbUtil dbUtil = new DbUtil();
@@ -134,7 +134,7 @@ public class BookAddInterFrm extends JInternalFrame {
 		
 		JLabel label_5 = new JLabel("图书类别：");
 		
-		bookTypeJcb = new JComboBox();
+		bookTypeJcb = new JComboBox<BookType>();
 		
 		unknownJrb = new JRadioButton("不明");
 		buttonGroup.add(unknownJrb);

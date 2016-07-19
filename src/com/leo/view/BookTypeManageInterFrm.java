@@ -36,7 +36,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class BookTypeManageInterFrm extends JInternalFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 	private JTable bookTypeTable;
 	private DbUtil dbUtil = new DbUtil();
@@ -218,6 +219,7 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 				"\u7F16\u53F7", "\u56FE\u4E66\u7C7B\u522B\u540D\u79F0", "\u56FE\u4E66\u7C7B\u522B\u63CF\u8FF0"
 			}
 		) {
+			private static final long serialVersionUID = 1L;
 			boolean[] columnEditables = new boolean[] {
 				false, false, false
 			};

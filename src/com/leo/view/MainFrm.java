@@ -19,7 +19,8 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 
 public class MainFrm extends JFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 	private JPanel contentPane;
 	private JDesktopPane desktop = null;

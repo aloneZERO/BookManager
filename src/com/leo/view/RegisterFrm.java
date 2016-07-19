@@ -28,7 +28,8 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 
 public class RegisterFrm extends JFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 	private JPanel contentPane;
 	private JTextField userNameTxt;
