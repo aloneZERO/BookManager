@@ -30,7 +30,6 @@ public class BookTypeAddInterFrm extends JInternalFrame {
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 	private JTextField bookTypeNameTxt;
 	private JTextArea bookTypeDescTxt;
-	private DbUtil dbUtil = new DbUtil();
 	private BookTypeDao bookTypeDao = new BookTypeDao();
 	
 	/**
@@ -150,7 +149,7 @@ public class BookTypeAddInterFrm extends JInternalFrame {
 		BookType bookType = new BookType(bookTypeName,bookTypeDesc);
 		Connection con = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			if(bookTypeDao.isRepeat(con, bookType)) {
 				resetValue();
 				JOptionPane.showMessageDialog(null, "图书类别已存在","提示",
@@ -172,7 +171,7 @@ public class BookTypeAddInterFrm extends JInternalFrame {
 					JOptionPane.INFORMATION_MESSAGE);
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

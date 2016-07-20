@@ -34,7 +34,6 @@ public class LoginFrm extends JFrame {
 	private JPanel contentPane;
 	private JTextField userNameTxt;
 	private JPasswordField passwordTxt;
-	private DbUtil dbUtil = new DbUtil();
 	private UserDao userDao = new UserDao();
 
 	/**
@@ -201,7 +200,7 @@ public class LoginFrm extends JFrame {
 		User user = new User(userName, password);
 		Connection con = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			User currentUser = userDao.login(con, user);
 			if(currentUser != null) {
 //				JOptionPane.showMessageDialog(null, "登录成功");
@@ -217,7 +216,7 @@ public class LoginFrm extends JFrame {
 					JOptionPane.INFORMATION_MESSAGE);
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

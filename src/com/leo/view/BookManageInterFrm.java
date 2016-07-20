@@ -44,7 +44,6 @@ public class BookManageInterFrm extends JInternalFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
-	private DbUtil dbUtil = new DbUtil();
 	private BookDao bookDao = new BookDao();
 	private BookTypeDao bookTypeDao = new BookTypeDao();
 	
@@ -376,7 +375,7 @@ public class BookManageInterFrm extends JInternalFrame {
 		if(choose == 0) {
 			Connection con = null;
 			try {
-				con = dbUtil.getCon();
+				con = DbUtil.getCon();
 				int result = bookDao.delete(con, bookId);
 				if(result == 1) {
 					this.resetValue();
@@ -395,7 +394,7 @@ public class BookManageInterFrm extends JInternalFrame {
 						JOptionPane.INFORMATION_MESSAGE);
 			}finally {
 				try {
-					dbUtil.closeCon(con);
+					DbUtil.closeCon(con);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -445,7 +444,7 @@ public class BookManageInterFrm extends JInternalFrame {
 		
 		Connection con = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			int result = bookDao.update(con, book);
 			if(result == 1) {
 				resetValue();
@@ -463,7 +462,7 @@ public class BookManageInterFrm extends JInternalFrame {
 					JOptionPane.INFORMATION_MESSAGE);
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -533,7 +532,7 @@ public class BookManageInterFrm extends JInternalFrame {
 		dtm.setRowCount(0); //设置行数为0，即为表清空
 		Connection con = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			ResultSet rs = bookDao.list(con, book);
 			while(rs.next()) {
 				Vector<String> v = new Vector<>();
@@ -550,7 +549,7 @@ public class BookManageInterFrm extends JInternalFrame {
 			e.printStackTrace();
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -565,7 +564,7 @@ public class BookManageInterFrm extends JInternalFrame {
 		Connection con = null;
 		BookType bookType = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			ResultSet rs = bookTypeDao.list(con, new BookType());
 			if("search".equals(type)) {
 				bookType = new BookType();
@@ -587,7 +586,7 @@ public class BookManageInterFrm extends JInternalFrame {
 			e.printStackTrace();
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

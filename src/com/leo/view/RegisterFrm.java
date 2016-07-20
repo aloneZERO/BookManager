@@ -35,7 +35,6 @@ public class RegisterFrm extends JFrame {
 	private JTextField userNameTxt;
 	private JPasswordField passwordTxt;
 	private JPasswordField checkpasswordTxt;
-	private DbUtil dbUtil = new DbUtil();
 	private UserDao userDao = new UserDao();
 
 	/**
@@ -219,7 +218,7 @@ public class RegisterFrm extends JFrame {
 		User user = new User(userName,password);
 		Connection con = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			int result = userDao.register(con, user);
 			if(result == 1) {
 				this.resetValue();
@@ -238,7 +237,7 @@ public class RegisterFrm extends JFrame {
 			return;
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

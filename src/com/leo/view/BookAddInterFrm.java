@@ -46,7 +46,6 @@ public class BookAddInterFrm extends JInternalFrame {
 	private JComboBox<BookType> bookTypeJcb;
 	private JTextArea bookDescTxt;
 	
-	private DbUtil dbUtil = new DbUtil();
 	private BookTypeDao bookTypeDao = new BookTypeDao();
 	private BookDao bookDao = new BookDao();
 	
@@ -265,7 +264,7 @@ public class BookAddInterFrm extends JInternalFrame {
 		
 		Connection con = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			if(bookDao.isRepeat(con, book)) {
 				JOptionPane.showMessageDialog(null, "图书已存在","提示",
 						JOptionPane.INFORMATION_MESSAGE);
@@ -288,7 +287,7 @@ public class BookAddInterFrm extends JInternalFrame {
 					JOptionPane.INFORMATION_MESSAGE);
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -301,7 +300,7 @@ public class BookAddInterFrm extends JInternalFrame {
 	private void initBookTypeJcb(BookType bookType) {
 		Connection con = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			ResultSet rs = bookTypeDao.list(con, bookType);
 			while(rs.next()) {
 				bookType = new BookType();
@@ -313,7 +312,7 @@ public class BookAddInterFrm extends JInternalFrame {
 			e.printStackTrace();
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -40,7 +40,6 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 	
 	private String lookAndFeel_win = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
 	private JTable bookTypeTable;
-	private DbUtil dbUtil = new DbUtil();
 	private BookTypeDao bookTypeDao = new BookTypeDao();
 	private BookDao bookDao = new BookDao();
 	private JTextField s_bookTypeNameTxt;
@@ -252,7 +251,7 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 		if(choose == 0) {
 			Connection con = null;
 			try {
-				con = dbUtil.getCon();
+				con = DbUtil.getCon();
 				if(bookDao.existBookByBookTypeId(con, bookTypeId)) {
 					JOptionPane.showMessageDialog(null, "当前分类下有图书，无法删除此类别！","提示",
 							JOptionPane.INFORMATION_MESSAGE);
@@ -276,7 +275,7 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 						JOptionPane.INFORMATION_MESSAGE);
 			}finally {
 				try {
-					dbUtil.closeCon(con);
+					DbUtil.closeCon(con);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -301,7 +300,7 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 		BookType bookType = new BookType(Integer.parseInt(bookTypeId),bookTypeName,bookTypeDesc);
 		Connection con = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			if(StringUtil.isEmpty(bookTypeName)) {
 				JOptionPane.showMessageDialog(null, "图书类别名不可为空！","警告",
 						JOptionPane.INFORMATION_MESSAGE);
@@ -326,7 +325,7 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 			return;
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -364,7 +363,7 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 		dtm.setRowCount(0); //设置行数为0，即为表清空
 		Connection con = null;
 		try {
-			con = dbUtil.getCon();
+			con = DbUtil.getCon();
 			ResultSet rs = bookTypeDao.list(con, bookType);
 			while(rs.next()) {
 				Vector<String> v = new Vector<>();
@@ -377,7 +376,7 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 			e.printStackTrace();
 		}finally {
 			try {
-				dbUtil.closeCon(con);
+				DbUtil.closeCon(con);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -6,6 +6,14 @@ package com.leo.util;
  *
  */
 public class StringUtil {
+	
+	/**
+	 * 构造方法私有化
+	 */
+	private StringUtil() {
+		super();
+	}
+	
 	/**
 	 * 判断是否为空
 	 * @param str
