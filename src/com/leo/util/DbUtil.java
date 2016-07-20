@@ -17,11 +17,18 @@ public class DbUtil {
 	private static String jdbcName = "com.mysql.cj.jdbc.Driver"; //数据库驱动名称
 	
 	/**
+	 * 私有化构造方法
+	 */
+	private DbUtil() {
+		super();
+	}
+	
+	/**
 	 * 获取数据库连接
 	 * @return con
 	 * @throws Exception
 	 */
-	public Connection getCon()throws Exception {
+	public static Connection getCon()throws Exception {
 		Class.forName(jdbcName);
 		Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 		return con;
@@ -32,7 +39,7 @@ public class DbUtil {
 	 * @param con
 	 * @throws Exception
 	 */
-	public void closeCon(Connection con)throws Exception {
+	public static void closeCon(Connection con)throws Exception {
 		if(con != null) {
 			con.close();
 		}
@@ -43,9 +50,8 @@ public class DbUtil {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		DbUtil dbUtil = new DbUtil();
 		try {
-			dbUtil.getCon();
+			DbUtil.getCon();
 			System.out.println("数据库连接成功");
 		} catch (Exception e) {
 			System.out.println("数据库连接失败");
