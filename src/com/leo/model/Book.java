@@ -6,12 +6,12 @@ package com.leo.model;
  *
  */
 public class Book {
-	private Integer id; //编号
+	private int id; //编号
 	private String bookName; //图书名称
 	private String author; //作者
 	private String sex; //作者性别
-	private Float price; //图书价格
-	private Integer bookTypeId; //图书类别编号
+	private float price; //图书价格
+	private int bookTypeId; //图书类别编号
 	private String bookTypeName; //图书类别名称
 	private String bookDesc; //图书描述
 	
