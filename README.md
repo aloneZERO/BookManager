@@ -1,29 +1,27 @@
-# BookManager
-简易的图书管理系统
+# Book Manager
+Simple Library Management System --- training project
 
-### 技术
-* 开发环境: eclipse + WindowBuilder + MySQL
-* Java8
+### Skill
+* Development environment: Eclipse + WindowBuilder + MySQL
+* JDK version: 1.8
 
-### 特点
-简约大方，容易上手（其实没啥特点~嘻嘻）！
+### Feature
+Easy to use it, or practice yourself JavaSE basic skill by it !
 
-### 主要功能
-1. 图书类别添加和维护
-2. 图书添加和维护
-3. 关于作者：justZERO（强行安利~哈哈）
+### Main Function
+1. Add and maintain the books category.
+2. Add and maintain the books.
 
-### 注意事项
-1. 电脑上装上JRE先！！！
-2. MySQL用户名，密码请自行更改。
- * 默认用户名：root
- * 默认密码：********（源码里默认为空）
+### Consideration
+1. MySQL: Please alter the user name and the password to yours.
+* Default user name：root
+* Default password：*******（in source code, it is void）
 
-### 启动
-导入eclipse 或控制台运行：bin\com\leo\view\LoginFrm.class
+### Launch
+Import to your eclipse , or use your terminal：bin\com\leo\view\LoginFrm.class
 
-### 感谢
+### Thanks
 [java1234_小峰哥](http://www.java1234.com/)
 
-### 协议
+### Open Source License
 [WTFPL](http://www.wtfpl.net/about/)
