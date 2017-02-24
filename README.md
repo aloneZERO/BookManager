@@ -2,7 +2,7 @@
 **Simple Library Management System --- training project**
 
 ### Operation Interface
-![BookManager](http://upload-images.jianshu.io/upload_images/1606489-a7fabde81906b5b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](others/UI.png)
 
 ### Skill
 * Development environment: Eclipse + WindowBuilder + MySQL
